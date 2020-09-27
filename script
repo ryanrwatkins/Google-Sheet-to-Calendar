@@ -1,0 +1,55 @@
+// This creates a new menu in the menu bar of the Spreadsheet, and then inserts menu item for running the script.
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('Sync to Calendar')
+      .addItem('Update Calendar', 'FunctionGWcodersSchedule')
+      .addToUi();
+}
+
+function FunctionGWcodersSchedule() {
+  
+  // Get the spreadsheet and sheet/tab within, then get the calendar ID from the spreadsheet, and get the calendar
+  var spreadsheet = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/#################").getSheetByName("schedule");
+  var calendarId = spreadsheet.getRange("A2").getValue();
+  var eventCal = CalendarApp.getCalendarById(calendarId);
+  
+  var topics = spreadsheet.getRange("A5:E17").getValues();  //Get the section of the spreadsheet we are using
+  
+  //Since we don't want duplicates, we first delete all the events and then we will replace them with the edited events
+  
+  //take care: Date function starts at 0 for the month (January=0)
+  var fromDate = new Date(2020,0,1); //This is January 1, 2020
+  var toDate = new Date(2022,0,1);   //This is January 1, 2022 at 00h00'00"
+  
+  var events = eventCal.getEvents(fromDate, toDate);   //Get all events in the time range
+
+  for(var i=0; i<events.length;i++)  
+  {  
+    var ev = events[i];   // Get each individual event
+    
+    ev.deleteEvent();     // delete the event
+  }
+  
+  // now we create the new events one at a time
+  for (x=0; x<topics.length; x++){
+  
+    var meetup = topics[x];   // Get each event, row, from the Sheet
+    
+    var begin = meetup[0];    // Assign a variable to each column
+    var end = meetup[1];
+    var topic = meetup[2];
+    var description = meetup[3];
+    var presenter = meetup[4];
+
+    
+    //Create the event
+    eventCal.createEvent("GW Coders: " + topic + ' with ' + presenter, begin, end,{location: 'https://us02web.zoom.us/#################'}).addPopupReminder(30).setDescription(description);
+    
+    // Pause briefly since you can only edit the ccalendar so many times per sec
+    Utilities.sleep(2000);
+  
+  }
+  
+}
+
+// You can also set a back-up time trigger in Edit -> Triggers just in case you forget to hit sync after making edits
