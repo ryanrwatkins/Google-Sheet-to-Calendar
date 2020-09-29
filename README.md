@@ -14,7 +14,7 @@ Here are the steps to get started:
 9. Copy and paste the script from here (above) into the Google Apps Script editor.  This will replace the blank "myfunction" that they give you to start. 
 10. The script has notes on what each element is doing. There are a couple that you will want to edit.
 
-10a. On line 12 you will have to update the URL (web address) for the Spreadsheet you useing to maintain the calendar. If you have multiple Sheets, you can also add which Sheet within the Spreadsheet you are referring to.
+10a. On line 12 you will have to update the URL (web address) for the Spreadsheet you using to maintain the calendar. If you have multiple Sheets, you can also add which Sheet within the Spreadsheet you are referring to.
 
 10b. On line 13 you will want to update which cell of your sheet you put the calendar ID (again, mine was A2)
 
@@ -26,7 +26,7 @@ Here are the steps to get started:
 
 11. And that is it. At the top of the script I did another function that adds a menu item to the Google Sheet each time it is opened, and this allows you to run script (i.e., create the calendar events) without having to open Google Apps Script editor each time.  You can also add Triggers in the Google Apps Scripts within the Edit menu (for instance, you can set a trigger to run the script every 4 hours, as an alternative to creating the menu option). Depending on your use, you may have preferences for how (and when). it is best to update your calendar with new events or edited events.
 
-That is it, when you run the script you should get an updated calendar. I have it set to pause for 2 seconds between creating each event (line 49) since Google will only let you update so many events per second, but it runs quickly (depending on the number of events you have on the calendar).
+That is it, when you run the script you should get an updated calendar. Since you have two functions in the script, when you go to Run in the menu, you will have to select which function to run and you should select the Schedule function. I have it set to pause for 2 seconds between creating each event (line 49) since Google will only let you update so many events per second, but it runs quickly (depending on the number of events you have on the calendar).
 
 
 
