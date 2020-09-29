@@ -6,7 +6,7 @@ function onOpen() {
       .addToUi();
 }
 
-function FunctionGWcodersSchedule() {
+function schedule() {
   
   // Get the spreadsheet and sheet/tab within, then get the calendar ID from the spreadsheet, and get the calendar
   var spreadsheet = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/#################").getSheetByName("schedule");
