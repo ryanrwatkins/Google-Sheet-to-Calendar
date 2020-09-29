@@ -15,9 +15,13 @@ Here are the steps to get started:
 10. The script has notes on what each element is doing. There are a couple that you will want to edit.
 
 10a. On line 12 you will have to update the URL (web address) for the Spreadsheet you useing to maintain the calendar. If you have multiple Sheets, you can also add which Sheet within the Spreadsheet you are referring to.
+
 10b. On line 13 you will want to update which cell of your sheet you put the calendar ID (again, mine was A2)
+
 10c. On line 16 hange the range of cells that you are using to update your calendar. My script has cells A5:E17 since I had 5 elements I wanted to bring into each event (start time, end time, topic, description, and presenter).
+
 10d. From lines 28 to 32 you will see the first elements for each event and I assigned those to variables. If you only want to bring 3 elements, for example, then just delete the others.  You have to have a title, start time, and end time to create an event, the other optional.
+
 10e. The events are created on line 46 by sending the variables we just created. I also added a location for each event, 30 minute reminder to each event, and then the description at the end. You can delete any of these that you are not using, the first three are the required one (title, start time, end time).
 
 11. And that is it. At the top of the script I did another function that adds a menu item to the Google Sheet each time it is opened, and this allows you to run script (i.e., create the calendar events) without having to open Google Apps Script editor each time.  You can also add Triggers in the Google Apps Scripts within the Edit menu (for instance, you can set a trigger to run the script every 4 hours, as an alternative to creating the menu option). Depending on your use, you may have preferences for how (and when). it is best to update your calendar with new events or edited events.
