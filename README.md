@@ -1,5 +1,5 @@
 # Google-Sheet-to-Calendar
-A Google Script (java) for linking a spreadsheet to calendar in order to maintain an updated calendar
+A Google Apps Script (javascript) for linking a spreadsheet to calendar in order to maintain an updated calendar
 
 The script is based on Joanna Smith's script, with a few small updates and preferences. The steps below parallel what she included in her [blog](https://cloud.google.com/blog/products/g-suite/g-suite-pro-tip-how-to-automatically-add-a-schedule-from-google-sheets-into-calendar), and she has some animations that might help illustrate some of the steps. One major addition I made to the script is deleting the old calendar events, otherwise I just kept creating new duplicate events each time the script was run.
 
