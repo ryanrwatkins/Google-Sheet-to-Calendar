@@ -2,7 +2,8 @@
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('Sync to Calendar')
-      .addItem('Update Calendar', 'FunctionGWcodersSchedule')
+      //.addItem('Update Calendar', 'FunctionGWcodersSchedule')
+      .addItem('Update Calendar', 'schedule')
       .addToUi();
 }
 
