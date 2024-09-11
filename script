@@ -42,13 +42,15 @@ function schedule() {
     var description = meetup[3];
     var presenter = meetup[4];
 
-    
+    // Check if all necessary fields have valid data
+    if (!isNaN(begin.getTime()) && !isNaN(end.getTime()) && topic && presenter) {
+
     //Create the event
     eventCal.createEvent(topic + ' with ' + presenter, begin, end,{location: 'https://us02web.zoom.us/#################'}).addPopupReminder(30).setDescription(description);
     
     // Pause briefly since you can only edit the ccalendar so many times per sec
     Utilities.sleep(2000);
-  
+  }
   }
   
 }
